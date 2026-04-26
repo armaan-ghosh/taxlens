@@ -1,0 +1,67 @@
+/* Minimal TaxLens styles injected into Amazon.ca */
+
+.amazon-tax-info {
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 13px;
+  color: #111111;
+  margin-top: 10px;
+  padding: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 3px solid #4ade80;
+  border-radius: 8px;
+}
+
+.amazon-tax-info .tax-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 5px 0;
+}
+
+.amazon-tax-info .tax-row.total {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #bbf7d0;
+  background: #dcfce7;
+  border-radius: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.amazon-tax-info .tax-label {
+  color: #111111;
+  font-size: 12px;
+}
+
+.amazon-tax-info .tax-value {
+  color: #111111;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.amazon-tax-info .tax-row.total .tax-label strong {
+  color: #111111;
+}
+
+.amazon-tax-info .tax-row.total .tax-value strong {
+  color: #111111;
+  font-size: 14px;
+}
+
+.amazon-tax-info-compact {
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 12px;
+  margin-top: 4px;
+  padding: 4px 8px;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  background: #f0fdf4;
+  display: inline-block;
+}
+
+.amazon-tax-info-compact .tax-total {
+  color: #111111;
+  font-weight: 600;
+}

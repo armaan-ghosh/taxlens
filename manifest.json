@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "TaxLens",
+  "version": "1.1.0",
+  "description": "View accurate after-tax totals on Amazon.ca with HST, GST, PST, and QST for every province and territory.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.amazon.ca/*",
+    "https://ipapi.co/*",
+    "https://ipinfo.io/*",
+    "https://ipwhois.app/*",
+    "https://freeipapi.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amazon.ca/*"
+      ],
+      "js": ["postal.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["canadaTaxRates.json"],
+      "matches": ["https://www.amazon.ca/*"]
+    }
+  ]
+}

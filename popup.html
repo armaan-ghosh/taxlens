@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaxLens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1 class="title">TaxLens</h1>
+        <p class="subtitle">For everyone shopping on Amazon.ca</p>
+        <p class="tagline">Calculate HST/GST/PST instantly</p>
+      </div>
+    </header>
+
+    <!-- Postal Code Input Card -->
+    <div class="card input-card">
+      <label for="postalCode" class="input-label">
+        <span class="label-text">Postal Code</span>
+        <span class="label-hint" title="Format: A1A 1A1">Info</span>
+      </label>
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          id="postalCode" 
+          class="postal-input"
+          placeholder="e.g., M5S 2E4" 
+          maxlength="7"
+          autocomplete="off">
+        <button type="button" id="clearPostalBtn" class="input-clear" aria-label="Clear postal code" title="Clear">×</button>
+        <span class="input-icon" id="validationIcon"></span>
+      </div>
+      <div class="btn-row">
+        <button id="saveBtn" class="save-btn">
+          <span class="btn-text">Save Settings</span>
+          <span class="btn-icon">→</span>
+        </button>
+        <button id="detectBtn" class="detect-btn" title="Estimate province from your IP (no GPS)">
+          <span class="btn-text">Detect</span>
+        </button>
+      </div>
+      <p class="helper-text">
+        Reads your postal code from Amazon.ca, or use Detect to estimate province
+      </p>
+      <div id="autoDetectStatus" class="auto-detect-badge" style="display: none;"></div>
+    </div>
+
+    <!-- Toggle Card -->
+    <div class="card toggle-card">
+      <label class="toggle-label">
+        <span class="toggle-text">Enable Tax Display</span>
+        <div class="toggle-switch">
+          <input type="checkbox" id="enableToggle" checked>
+          <span class="toggle-slider">
+            <span class="toggle-status"></span>
+          </span>
+        </div>
+      </label>
+    </div>
+
+    <!-- Current Settings Card -->
+    <div class="card settings-card" id="infoSection" style="display: none;">
+      <h3 class="card-title">Current Settings</h3>
+      <div class="settings-grid">
+        <div class="setting-row" id="postalRow">
+          <span class="setting-label">Postal Code</span>
+          <span class="setting-value" id="currentPostal">-</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Tax Rate</span>
+          <span class="setting-value highlight" id="currentRate">-</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Tax Type</span>
+          <span class="setting-value" id="currentType">-</span>
+        </div>
+        <div class="setting-row location-row">
+          <span class="setting-label" id="locationLabel">Location</span>
+          <span class="setting-value" id="currentLocation">-</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Display -->
+    <div id="message" class="message"></div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer-text">Built for all Canadian shoppers</p>
+    </footer>
+  </div>
+  
+  <script src="postal.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
