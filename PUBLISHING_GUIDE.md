@@ -1,6 +1,6 @@
-# Chrome Web Store — Listing Copy (Broad Audience)
+# Chrome Web Store — Plutus Listing Copy
 
-Use the text below for your store listing so the product reads as **for every Canadian shopper**, not a niche audience.
+Use the text below for your store listing.
 
 ---
 
@@ -10,8 +10,6 @@ Use the text below for your store listing so the product reads as **for every Ca
 See real after-tax totals on Amazon.ca — HST, GST, PST & QST for all provinces & territories.
 ```
 
-*(Adjust length to fit the dashboard field.)*
-
 ---
 
 ## Detailed description
@@ -19,10 +17,10 @@ See real after-tax totals on Amazon.ca — HST, GST, PST & QST for all provinces
 ```
 See what you'll actually pay on Amazon.ca — before you check out.
 
-Amazon shows pre-tax prices. Your total depends on where you live: from 5% GST in Alberta to 15% HST in Atlantic Canada. This extension calculates the tax and shows after-tax totals right on product pages, search results, and your cart.
+Amazon shows pre-tax prices. Your total depends on where you live: from 5% GST in Alberta to 15% HST in Atlantic Canada. Plutus calculates the tax and shows after-tax totals right on product pages, search results, and your cart.
 
 WHO IT'S FOR
-Anyone who shops on Amazon.ca — no setup drama. The extension tries to read your postal code from your Amazon delivery address, or you can enter it manually or use one-tap province detection.
+Anyone who shops on Amazon.ca — no setup drama. Plutus tries to read your postal code from your Amazon delivery address, or you can enter it manually or use one-tap province detection.
 
 WHAT YOU GET
 • Tax breakdown on product pages (before tax, tax amount, total)
@@ -67,4 +65,76 @@ Displays estimated Canadian sales tax and after-tax totals alongside prices on A
 
 ---
 
-For full upload steps (zip, screenshots, privacy policy URL), see your workflow docs or [Chrome Web Store developer documentation](https://developer.chrome.com/docs/webstore/).
+## Privacy policy URL
+
+```
+https://github.com/armaan-ghosh/taxlens/blob/main/PRIVACY_POLICY.md
+```
+
+Or raw:
+
+```
+https://raw.githubusercontent.com/armaan-ghosh/taxlens/main/PRIVACY_POLICY.md
+```
+
+---
+
+## Test instructions (500 char max)
+
+```
+No login required. Install and pin Plutus. Open amazon.ca on a product, search, or cart page. Confirm tax breakdown and after-tax totals appear beside prices. In popup, either save a valid Canadian postal code (e.g., M5S 2E4) or click Detect (IP province estimate). Verify Current Settings (rate/type/location) updates and totals refresh. Toggle Enable Tax Display off/on to confirm overlays hide/show.
+```
+
+---
+
+# How to update an existing Chrome Web Store listing (TaxLens → Plutus)
+
+## Before you start
+
+1. Build a new zip from the project root (exclude `.git`, old `taxlens*.zip`, and dev-only assets if you want a smaller package):
+
+```bash
+cd /Users/armaan/amazon-tax-calculator-canada
+zip -r plutus-v1.2.0.zip . \
+  -x "*.git*" -x "taxlens*.zip" -x "taxlens*.png" -x "taxlens_logo.png" -x ".DS_Store"
+```
+
+2. Push updated code to GitHub so your privacy policy URL stays current.
+
+---
+
+## Step-by-step in Developer Dashboard
+
+1. Open [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole).
+2. Click your existing extension item (TaxLens).
+3. Go to **Package** → **Upload new package**.
+4. Upload `plutus-v1.2.0.zip`.
+5. Confirm `manifest.json` shows:
+   - **Name:** `Plutus`
+   - **Version:** `1.2.0` (must be higher than your last published version)
+6. Go to **Store listing** and update:
+   - **Name:** `Plutus`
+   - **Short description** (use Summary above)
+   - **Detailed description** (use Detailed description above)
+   - **Icon:** upload `icons/icon128.png` (new Plutus logo)
+   - **Screenshots:** retake if they still show “TaxLens” in the popup
+7. Go to **Privacy** and update:
+   - **Single purpose** (paste from above)
+   - **Permission justifications** (same as before; replace “TaxLens” with “Plutus” if mentioned)
+   - **Privacy policy URL** (GitHub link above)
+   - **Data usage** checkboxes unchanged (Location + Website content)
+8. Go to **Test instructions** and replace “TaxLens” with “Plutus” in the 500-char text.
+9. Click **Submit for review**.
+
+---
+
+## Important notes
+
+- **Same listing vs new item:** Updating the existing item keeps reviews/installs. Users get the new name/icon on update. You do **not** need a second store item unless you want a separate listing.
+- **Name change:** Chrome may re-review when name/branding changes significantly.
+- **Version bump:** Every upload must increase `version` in `manifest.json` (now `1.2.0`).
+- **Local testing:** After upload, reload unpacked extension at `chrome://extensions` to verify Plutus branding before submitting.
+
+---
+
+For first-time publish workflow, see [Chrome Web Store developer documentation](https://developer.chrome.com/docs/webstore/publish/).

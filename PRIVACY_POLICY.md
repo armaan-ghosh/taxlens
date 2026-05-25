@@ -1,10 +1,10 @@
-# Privacy Policy — TaxLens
+# Privacy Policy — Plutus
 
-**Last updated:** March 6, 2026
+**Last updated:** April 26, 2026
 
 ## Overview
 
-TaxLens is a browser extension that displays Canadian sales tax alongside prices on Amazon.ca. This policy explains what data the extension accesses, how it is used, and what is stored.
+Plutus is a browser extension that displays Canadian sales tax alongside prices on Amazon.ca. This policy explains what data the extension accesses, how it is used, and what is stored.
 
 ## Data Collection
 
@@ -64,4 +64,4 @@ If this policy changes, the updated version will be published alongside the exte
 
 ## Contact
 
-If you have questions about this privacy policy, please open an issue at https://github.com/armaanghosh/taxlens/issues.
+If you have questions about this privacy policy, please open an issue at https://github.com/armaan-ghosh/taxlens/issues.

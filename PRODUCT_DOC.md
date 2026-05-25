@@ -1,4 +1,4 @@
-# TaxLens: Product Documentation
+# Plutus: Product Documentation
 
 ## 1. What It Is
 

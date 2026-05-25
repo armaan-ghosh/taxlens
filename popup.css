@@ -1,4 +1,4 @@
-/* TaxLens popup — minimalist theme */
+/* Plutus popup — minimalist theme */
 
 * {
   margin: 0;
@@ -34,6 +34,21 @@ body {
   border-bottom: 1px solid var(--line);
   padding: 20px 18px 14px;
   text-align: left;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.header-text {
+  min-width: 0;
 }
 
 .title {

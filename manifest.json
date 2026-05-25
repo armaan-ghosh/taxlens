@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "TaxLens",
-  "version": "1.1.0",
-  "description": "View accurate after-tax totals on Amazon.ca with HST, GST, PST, and QST for every province and territory.",
+  "name": "Plutus",
+  "version": "1.2.0",
+  "description": "See the real price you'll pay on Amazon.ca — after-tax totals with HST, GST, PST, and QST for every province and territory.",
   "permissions": [
     "storage",
     "activeTab",

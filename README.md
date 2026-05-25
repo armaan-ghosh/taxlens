@@ -1,10 +1,10 @@
-# TaxLens
+# Plutus
 
 See the real price you'll pay on Amazon.ca. This Chrome extension calculates and displays Canadian sales tax (HST, GST, PST, QST) directly on product pages, search results, and your cart.
 
 ## Why
 
-Amazon.ca shows pre-tax prices. A $100 item costs $105 in Alberta but $115 in Nova Scotia. This extension does the math so you don't have to.
+Amazon.ca shows pre-tax prices. A $100 item costs $105 in Alberta but $115 in Nova Scotia. Plutus does the math so you don't have to.
 
 ## Features
 
@@ -21,8 +21,8 @@ Amazon.ca shows pre-tax prices. A $100 item costs $105 in Alberta but $115 in No
 
 ## Release Package
 
-- Upload `taxlens.zip` for the latest build.
-- For versioned releases, use `taxlens-v1.1.0.zip`.
+- Upload `plutus.zip` for the latest build.
+- For versioned releases, use `plutus-v1.2.0.zip`.
 
 ### From source (developer mode)
 
@@ -34,7 +34,7 @@ Amazon.ca shows pre-tax prices. A $100 item costs $105 in Alberta but $115 in No
 
 ## How It Works
 
-1. The extension reads your postal code from Amazon's delivery address display
+1. Plutus reads your postal code from Amazon's delivery address display
 2. If none is found, it detects your province via IP geolocation (one-time, no tracking)
 3. The first letter of any Canadian postal code maps to a province — that determines your tax bracket
 4. Tax breakdowns are injected inline next to every price on the page
@@ -63,7 +63,7 @@ This extension does not collect, transmit, or sell any personal data. See [PRIVA
 ## Development
 
 ```bash
-git clone https://github.com/armaanghosh/taxlens.git
+git clone https://github.com/armaan-ghosh/taxlens.git
 cd taxlens
 # Load as unpacked extension in chrome://extensions
 ```
